@@ -32,3 +32,9 @@ html, body {
     font-size: 20px;
     padding: 5px;
 }
+
+.hackimg {
+    height: 300px;
+    width: 570px;
+    margin-bottom: 15px;
+}
