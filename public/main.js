@@ -15,6 +15,31 @@ $('.hackimg').hover(function() {
 
 $('#more').click(function() {
     window.location.href('/feed');
-})
+});
 
-console.log('dome!!');
+function getHackData(category) {
+    $.ajax({
+        type: 'GET',
+        dataType: 'json',
+        url: 'http://localhost:5000/' + category + '/hacksdata',
+        success: function(data) {
+            console.log(data);
+            $('#feed-wrapper').empty();
+            for (var i = 0; i <= data.length; i++) {
+                var box = document.createElement("div");
+                box.className = 'hackDiv';
+                box.innerHTML += "<p class='text'>" + data[i].body + "</p>";
+
+                $(box).hide().appendTo('#feed-wrapper').fadeIn(400);
+                console.log('something');
+            }
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+}
+
+document.addEventListener('DOMContentLoaded', getHackData('Tech.'));
+
+console.log('done!!');

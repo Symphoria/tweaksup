@@ -33,6 +33,15 @@ html, body {
     padding: 5px;
 }
 
+#register {
+    border-radius: 20px;
+    background: none;
+    border-color: black;
+    color: black;
+    font-size: 20px;
+    padding: 5px;
+}
+
 .hackimg {
     height: 300px;
     width: 570px;

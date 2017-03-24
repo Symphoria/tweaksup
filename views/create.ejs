@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1024, initial-scale=1.0">
     <title>Create Account</title>
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="create.css">
 </head>
+
 <body>
+    <nav class="navbar navbar-default" style="background-color: #ffbe4a;height: 90px;">
+        <div class="container">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                    <a class="navbar-brand" href="/" id="brand"><img id="brandImage" src="tweaksup_new.jpg" style="height:60px"></a>
+                </div>
 
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right" style="margin-top: 20px;color: black;">
+                        <li><a href="/">Home</a></li>
 
-    <form action="/registered" method="POST" name="form1" >
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+    </nav>
+    <div id="reg">
+    <form action="/registered" method="POST" name="form1">
 
-<input type="text" placeholder="Username" class="form-control" id="ok"  name="username" required>
-<br>
-
-<input type="password" placeholder="Password" class="form-control" id="ok" name="password" required>
-<br>
-
-<input type="email" placeholder="Email address" class="form-control" id="ok" name="email" required>
-<br>
-
-<div class="container">
-    <in class="form-group">
-        <label> Select your Favourites</label>
+        <input type="text" placeholder="Username" class="form-control" id="ok" name="username" required>
         <br>
-    <label>Favourite 1</label>
-        <select name="choice1">
+
+        <input type="password" placeholder="Password" class="form-control" id="ok" name="password" required>
+        <br>
+
+        <input type="email" placeholder="Email address" class="form-control" id="ok" name="email" required>
+        <br>
+
+        <div class="container">
+            <in class="form-group">
+                <label> Select your Favourites</label>
+                <br>
+                <label>Favourite 1</label>
+                <select name="choice1">
             <option>Health</option>
             <option>Tech.</option>
             <option>Cycological</option>
@@ -39,9 +68,9 @@
             <option>Time Management</option>
             <option>Road Trip Travel</option>
         </select>
-
-        <label>Favourite 2</label>
-        <select name="choice2">
+                <br>
+                <label>Favourite 2</label>
+                <select name="choice2">
             <option>Food</option>
             <option>Health</option>
             <option>Tech.</option>
@@ -53,9 +82,9 @@
             <option>Time Management</option>
             <option>Road Trip Travel</option>
         </select>
-
-<label>Favourite 3</label>
-        <select name="choice3">
+                <br>
+                <label>Favourite 3</label>
+                <select name="choice3">
             <option>Tech.</option>
             <option>Health</option>
             <option>Cycological</option>
@@ -67,53 +96,45 @@
             <option>Time Management</option>
             <option>Road Trip Travel</option>
         </select>
-    <br>
-    <br>
-<br>
-<br>
-<button class="btn btn-success btn-lg" id="shift" type="submit" onclick="phonenumber(document.form1.text1)" >Create account</button>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button class="btn btn-success btn-lg" id="shift" type="submit" onclick="phonenumber(document.form1.text1)">Create account</button>
 
-    </in>
+            </in>
+            <br><br>
+        </div>
+
+        <!--</form>-->
+        <!--<form action="/register" method="post">-->
+
+    </form>
 </div>
 
-    <!--</form>-->
-<!--<form action="/register" method="post">-->
-
-</form>
 
 
+    <% if (b==="0"){ %>
 
-<% if (b==="0"){ %>
 
-
-    <h2 id="ejs">
+        <h2 id="ejs">
     Email already exists
     </h2>
-<% } %>
+        <% } %>
 
 
-<% if (b==="1"){ %>
+            <% if (b==="1"){ %>
 
-<h2 id="ejs">
+                <h2 id="ejs">
 
     Username already exists
 </h2>
-<% } %>
-<script>
-    function phonenumber(inputtxt)
-    {
-        var phoneno = /^\d{10}$/;
-        if(inputtxt.value.match(phoneno))
-        {
-            return true;
-        }
-        else
-        {
-            alert("Not a valid Phone Number");
-            return false;
-        }
-    }
-</script>
+                <% } %>
 
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                    <script src="main.js"></script>
 </body>
+
 </html>

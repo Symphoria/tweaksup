@@ -53,7 +53,7 @@ app.post("/loginned",function (req,res) {
 
     var user=req.body.username;
     var pass=req.body.password;
-    newacc.findOne({username:user, password:pass,confirmation:"1"},function(err,bb){
+    User.findOne({username:user, password:pass,confirmation:"1"},function(err,bb){
 
 
         if (!bb) {
@@ -62,7 +62,7 @@ app.post("/loginned",function (req,res) {
         }
         else {
             req.session.username=user;
-            res.render("loginned.ejs", {name: bb.name,username:bb.username});
+            res.render("account.ejs", {username:bb.username});
         }
     })
 });
@@ -126,9 +126,9 @@ app.post("/registered",function(req,res)
                     sg.API(request, function(error, response) {
                         if (error) {
                             //console.log('Error response received');
-                            var hackdata={name:'Health',
-                                          hacks:{title:'Moodbooster',
-                                                 body:'Smeel the skin of an orange for a natural mood booster',
+                            var hackdata={name:'Tech.',
+                                          hacks:{title:'Honey',
+                                                 body:'Honey is an add-on extension to your chrome browser to instantly begin saving money. It automatically applies coupon codes during checkout',
                                                  upvotes:0,
                                                  downvotes:0}
                             };
@@ -167,14 +167,14 @@ app.get("/:category/hacksdata",function(req,res){
         for(var i = 0; i < data.length; i++) {
             dataObj.push(data[i].hacks);
         }
-        res.send(JSON.stringify(dataObj));
+        res.status(200).send(JSON.stringify(dataObj));
             if(err){
                 res.JSON({error: "Updated Successfully", status: 404});
             }
     });
 });
 
-app.get("/feed",function(){
+app.get("/feed",function(req, res){
    res.render("feed.ejs");
 });
 

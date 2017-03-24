@@ -1,0 +1,20 @@
+html,body{
+    background-color: #ffefad;
+}
+.center {
+    font-size: 20px;
+    padding-bottom:10px;
+}
+#log {
+    background-color: #fff;
+    width:23%;
+    margin-left: 37%;
+    border-radius: 32px;
+    margin-top: 8.5%;
+}
+#btn {
+    background-color: #3dd34f;
+}
+#tar {
+    margin-top: 15px;
+}

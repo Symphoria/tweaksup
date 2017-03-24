@@ -1,12 +1,11 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1024, initial-scale=1.0">
-    <title>Login</title>
+    <title>Tweak'sUp</title>
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Josefin+Slab|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="feed.css">
 </head>
 
 <body>
@@ -21,14 +20,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                    <a class="navbar-brand" href="/" id="brand"><img id="brandImage" src="tweaksup_new.jpg" style="height:60px"></a>
+                    <a class="navbar-brand" href="/" id="brand"><img id="brandImage" src="tweaksup_new.jpg"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 20px;color: black;">
                         <li><a href="/">Home</a></li>
-
+                        <li><a href="#">Categories</a></li>
                         <li><a href="#">About</a></li>
                     </ul>
                 </div>
@@ -37,45 +36,20 @@
             <!-- /.container-fluid -->
         </div>
     </nav>
-    
-<div id="log">
-    <br>
-    <div id="main">
-        <center>
-            <h3 id="h1">
-    Enter your login details
+    <div class="row">
+        <div class="col-lg-3" id="category-wrapper">
 
-<br><br>
-<form action="/loginned" method="post">
-
-
-<input type="text" placeholder="Username" class="center" name="username" id="user">
-
-<br>
-
-<input type="password" placeholder="Password" class ="center" id="tar" name="password" >
-<br>
-<br>
-
-<button id="btn" class="btn btn-default btn-lg" type="submit" >LOGIN </button>
-<br><br><br>
-
-</form>
-</div>
-</h2>
-        </center>
-        <% if (a==="1"){ %>
-
-            <center>
-
-                invalid username or password
-            </center>
-            <% } %>
-
+        </div>
+        <div class="col-lg-9" id="feed-wrapper">
+            <div id="hackDiv">
+                <p id="text">Some random hack concerned with the increase in the productivity of the world and its inhabitants ipsum ento voila yoohoo and yeah thats it</p>
+            </div>
+        </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
