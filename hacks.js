@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
 
-var Hacks = new mongoose.schema({
+var HacksSchema = new mongoose.Schema({
     name: String,
-    hacks: [{
+    hacks: {
         title: String,
         body: String,
         upvotes: Number,
         downvotes: Number
-    }]
+    }
 });
 
 var Hacks = mongoose.model("Hacks", HacksSchema);

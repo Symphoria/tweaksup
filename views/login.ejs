@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+</head>
+
+<body >
+
+<div id="main">
+    <center>
+<h2 id="h1" >
+    Enter your login details
+
+<br>
+
+
+<form action="/loginned" method="post">
+
+
+<input type="text" placeholder="Username" class="center" name="username" id="user">
+
+<br>
+
+<input type="password" placeholder="Password" class ="center" id="pass" name="password" >
+<br>
+<br>
+
+<button id="btn" class="btn btn-default btn-lg" type="submit" >LOGIN </button>
+
+</form>
+</h2>
+    </center>
+<% if (a==="1"){ %>
+
+<center>
+
+invalid username or password
+</center>
+<% } %>
+
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.1.1.js"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+

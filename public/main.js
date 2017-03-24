@@ -13,4 +13,8 @@ $('.hackimg').hover(function() {
         document.getElementById(image).src = image + '.jpg';
 });
 
+$('#more').click(function() {
+    window.location.href('/feed');
+})
+
 console.log('dome!!');

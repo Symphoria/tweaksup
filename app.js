@@ -5,9 +5,10 @@ var express=require("express"),
     mongoose = require("mongoose"),
     Schema = mongoose.Schema,
     User=require("./user.js"),
+    Hacks=require("./hacks.js"),
     sg = require('sendgrid')(process.env.SENDGRID_API_KEY),
     passport=require("passport"),
-    LocalStrategy=require("passport-local");
+    LocalStrategy=require("passport-local"),
     cookieParser=require("cookie-parser");
 
 
@@ -67,7 +68,7 @@ app.post("/loginned",function (req,res) {
 });
 
 
-app.post("/register",function(req,res)
+app.post("/registered",function(req,res)
 {
     var details={
 
@@ -125,8 +126,16 @@ app.post("/register",function(req,res)
                     sg.API(request, function(error, response) {
                         if (error) {
                             //console.log('Error response received');
-
+                            var hackdata={name:'Health',
+                                          hacks:{title:'Moodbooster',
+                                                 body:'Smeel the skin of an orange for a natural mood booster',
+                                                 upvotes:0,
+                                                 downvotes:0}
+                            };
                             User.create(details);
+                            Hacks.create(hackdata);
+
+
                             res.render("registered.ejs", {username: details.username});
                         }
                         else {
@@ -148,6 +157,25 @@ app.post("/register",function(req,res)
         }
     });
 
+});
+
+app.get("/:category/hacksdata",function(req,res){
+    var category=req.params.category;
+    Hacks.find({name:category},function(err,data){
+        //console.log(data);
+        var dataObj = [];
+        for(var i = 0; i < data.length; i++) {
+            dataObj.push(data[i].hacks);
+        }
+        res.send(JSON.stringify(dataObj));
+            if(err){
+                res.JSON({error: "Updated Successfully", status: 404});
+            }
+    });
+});
+
+app.get("/feed",function(){
+   res.render("feed.ejs");
 });
 
 

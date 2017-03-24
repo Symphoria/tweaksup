@@ -1,0 +1,32 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#brandImage {
+    height: 60px;
+}
+
+#category-wrapper {
+    background-color: rgb(246, 205, 132);
+    margin-top: -21px;
+}
+
+#feed-wrapper {
+    background-color: #ffefad;
+    height: 60%;
+    margin-top: -21px;
+    margin-left: 25%;
+    padding-top: 20px;
+}
+
+#hackDiv {
+    background-color: white;
+    width: 900px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    padding: 25px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 20px;
+}
