@@ -2,6 +2,33 @@ body {
     background-color: #ffbd4a;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 #logo {
     height: 400px;
+}
+
+#quote {
+    font-family: 'Bitter', serif;
+    margin-top: 60px;
+    margin-left: 35px;
+    font-size: 50px;
+}
+
+.element {
+    font-family: 'Josefin Slab', serif;
+    font-size: 38px;
+    margin-left: 140px;
+}
+
+#login {
+    border-radius: 20px;
+    background: none;
+    border-color: black;
+    color: black;
+    font-size: 20px;
+    padding: 5px;
 }
