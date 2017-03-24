@@ -1,11 +1,11 @@
 {
-  "name": "ayush",
+  "name": "tweaksup",
   "version": "1.0.0",
   "description": "simple package.json",
   "main": "grader.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend.js"
+    "start": "node app.js"
   },
   "author": "Ayush",
   "license": "ISC",
