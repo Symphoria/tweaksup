@@ -10,7 +10,6 @@ var express = require("express"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     x = process.env.x,
-    path = require(path),
     cookieParser = require("cookie-parser");
 
 
