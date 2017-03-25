@@ -39,7 +39,6 @@ app.get('/', function(req, res) {
 
 
 app.get("/create",function(req,res) {
-
     res.render("create.ejs",{b:"2"});
 });
 
@@ -50,11 +49,9 @@ app.get("/login",function(req,res){
 
 
 app.post("/loginned",function (req,res) {
-
     var user=req.body.username;
     var pass=req.body.password;
     User.findOne({username:user, password:pass,confirmation:"1"},function(err,bb){
-
 
         if (!bb) {
             res.render("login.ejs",{a:"1"});
@@ -78,7 +75,7 @@ app.post("/registered",function(req,res)
         favourite1:req.body.choice1,
         favourite2:req.body.choice2,
         favourite3:req.body.choice3,
-        confirmation:"0"
+        confirmation:"1"
 
     };
     User.findOne({username:details.username},function(err,bb){
@@ -125,19 +122,17 @@ app.post("/registered",function(req,res)
 
                     sg.API(request, function(error, response) {
                         if (error) {
-                            //console.log('Error response received');
-                            var hackdata={name:'Tech.',
-                                          hacks:{title:'Honey',
-                                                 body:'Honey is an add-on extension to your chrome browser to instantly begin saving money. It automatically applies coupon codes during checkout',
-                                                 upvotes:0,
-                                                 downvotes:0}
-                            };
-                            User.create(details);
-                            Hacks.create(hackdata);
-
-
-                            res.render("registered.ejs", {username: details.username});
-                        }
+                             console.log('Error response received');
+                        //     var hackdata={name:'Tech.',
+                        // //                   hacks:{title:'Honey',
+                        // //                          body:'Honey is an add-on extension to your chrome browser to instantly begin saving money. It automatically applies coupon codes during checkout',
+                        // //                          upvotes:0,
+                        // //                          downvotes:0}
+                        // //     };
+                           //  User.create(details);
+                        // //     Hacks.create(hackdata);
+                             //res.render("registered.ejs", {username: details.username});
+                          }
                         else {
                             User.create(details);
                             res.render("registered.ejs", {username: details.username});
@@ -159,6 +154,32 @@ app.post("/registered",function(req,res)
 
 });
 
+
+app.get("/confirmation/username/:un",function(req,res){
+    var verify=(req.params.un);
+    User.findOne({username:(req.params.un)},function(err,bb){
+        if(bb) {
+            // newacc.findOne({username:(req.params.un)},bb.confirmation="1");
+            User.update({username:verify},{$set:{confirmation:"1"}},function (err, numUpdated) {
+                if (err) {
+                    console.log(err);
+                } else if (numUpdated) {
+                    console.log('Confirmation set to 1');
+                } else {
+                    console.log('No document found with defined "find" criteria!');
+                }
+                //Close connection
+            });
+            res.redirect("/login");
+        }
+        else{
+            res.send("USER NOT REGISTERED");
+        }
+        //console.log(newacc.confirmation);
+    })
+});
+
+
 app.get("/:category/hacksdata",function(req,res){
     var category=req.params.category;
     Hacks.find({name:category},function(err,data){
@@ -176,6 +197,12 @@ app.get("/:category/hacksdata",function(req,res){
 
 app.get("/feed",function(req, res){
    res.render("feed.ejs");
+});
+
+app.get("/logout",function (req,res) {
+    req.logout();
+    req.session.username=false;
+    res.redirect("/");
 });
 
 

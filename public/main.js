@@ -37,7 +37,7 @@ function getHackData(category) {
         error: function (err) {
             console.log(err);
         }
-    })
+    });
 }
 
 document.addEventListener('DOMContentLoaded', getHackData('Tech.'));
