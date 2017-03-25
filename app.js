@@ -10,6 +10,7 @@ var express = require("express"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     x = process.env.x,
+    path = require(path),
     cookieParser = require("cookie-parser");
 
 
@@ -17,6 +18,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(x.toString());
 
 app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
