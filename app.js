@@ -223,7 +223,7 @@ app.post('/newhack', function(req, res) {
     var title = req.body.title;
     var body = req.body.body;
     var newhack = {
-        name: category,
+        name: title,
         hacks: {
             title: title,
             body: body,
