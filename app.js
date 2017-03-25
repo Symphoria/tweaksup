@@ -195,6 +195,23 @@ app.get("/:category/hacksdata",function(req,res){
     });
 });
 
+app.post('/newhack',function(req,res){
+   var category=req.body.category;
+   var title=req.body.title;
+   var body=req.body.body;
+   var newhack={
+       name:category,
+       hacks:{
+           title:title,
+           body:body,
+           upvotes:0,
+           downvotes:0
+       }
+   };
+   Hacks.create(newhack);
+   res.render('account.ejs');
+});
+
 app.get("/feed",function(req, res){
    res.render("feed.ejs");
 });

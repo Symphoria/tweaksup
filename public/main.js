@@ -48,9 +48,11 @@ $('#login').click(function() {
     window.location.href = 'login';
 });
 
-$('.type').click(function() {
+$('a').click(function() {
     getHackData($(this).attr('id'));
-})
+    $('a').parent().removeClass('active');
+    $(this).parent().addClass('active');
+});
 
 document.addEventListener('DOMContentLoaded', getHackData('Tech.'));
 
