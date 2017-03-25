@@ -40,6 +40,18 @@ function getHackData(category) {
     });
 }
 
+$('#register').click(function() {
+    window.location.href = 'create';
+});
+
+$('#login').click(function() {
+    window.location.href = 'login';
+});
+
+$('.type').click(function() {
+    getHackData($(this).attr('id'));
+})
+
 document.addEventListener('DOMContentLoaded', getHackData('Tech.'));
 
 console.log('done!!');

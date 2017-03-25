@@ -9,7 +9,6 @@ html, body {
 }
 
 #category-wrapper {
-    background-color: rgb(246, 205, 132);
     margin-top: -21px;
 }
 
@@ -17,7 +16,6 @@ html, body {
     background-color: #ffefad;
     padding-bottom:20px;
     margin-top: -21px;
-    margin-left: 25%;
     padding-top: 20px;
 }
 
@@ -31,5 +29,3 @@ html, body {
     font-family: 'Roboto', sans-serif;
     border-radius: 20px;
 }
-
-
