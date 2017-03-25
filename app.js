@@ -111,7 +111,7 @@ app.post("/registered", function(req, res) {
                             }],
                             from: {
                                 name: 'TweaksUp',
-                                email: 'TweaksUp'
+                                email: 'iec2016039@iiita.ac.in'
                             },
                             content: [{
                                 type: 'text/html',
