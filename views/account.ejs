@@ -26,6 +26,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 20px;color: black;">
+                        <li><a href="#" data-toggle="modal" data-target="#newHackModal"</li>
                         <li><a href="/">Home</a></li>
                         <li><a href="#">Categories</a></li>
                         <li><a href="#">About</a></li>
@@ -48,6 +49,46 @@
         <div class="col-lg-9" id="feed-wrapper">
             <div id="hackDiv">
                 <p id="text">Some random hack concerned with the increase in the productivity of the world and its inhabitants ipsum ento voila yoohoo and yeah thats it</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="newHackModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Start Writing</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" action="">
+                        <div class="form-group">
+                            <label for="author-name" class="col-sm-2 control-label">Category</label>
+                            <div class="col-sm-10">
+                                <input name='category' type="text" class="form-control" id="author-name" placeholder="Author Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="title-name" class="col-sm-2 control-label">Title</label>
+                            <div class="col-sm-10">
+                                <input name="title" type="text" class="form-control" id="title-name"
+                                       placeholder="Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="main-body" class="col-sm-2 control-label"></label>
+                            <div class="col-sm-10">
+                                <textarea name="body" class="form-control" rows="10" id="main-body"
+                                          placeholder="Pour your thoughts here"></textarea>
+                            </div>
+                        </div>
+                        <p style="color: #e62222" id="newPostError"></p>
+                        <button type="submit" class="btn btn-success" style="margin-left: 250px;" id="newPostSubmit"
+                                data-loading-text="Submitting..." autocomplete="off">Submit
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
