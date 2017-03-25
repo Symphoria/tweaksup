@@ -21,7 +21,7 @@ function getHackData(category) {
     $.ajax({
         type: 'GET',
         dataType: 'json',
-        url: 'http://localhost:5000/' + category + '/hacksdata',
+        url: 'http://tweaksup.herokuapp.com/' + category + '/hacksdata',
         success: function(data) {
             console.log(data);
             $('#feed-wrapper').empty();
